@@ -7,7 +7,7 @@ def process_image(image_path):
     return image
 
 def display_results(query_image, results, files_path):
-    images = [process_image(query_image)]
+    images = [query_image.resize((448, 448))]
     class_names = []
     for id_img in results['ids'][0]:
         id_img = int(id_img.split('_')[-1])
