@@ -4,7 +4,7 @@ import streamlit as st
 from chromadb import chromadb
 from streamlit_app.chroma_client import add_embedding
 from streamlit_app.chroma_search import search
-from streamlit_app.directory_utils import find_path, get_path, change_directory
+from streamlit_app.directory_utils import find_path, get_files_path, change_directory
 from streamlit_app.display_utils import display_results
 
 def handle_extract(short_option):
@@ -18,7 +18,7 @@ def handle_extract(short_option):
         st.error("Cannot find the 'Image_Retrieval' directory.")
         return
     
-    files_path = get_path(ROOT)
+    files_path = get_files_path(ROOT)
     chroma_client = chromadb.Client()
 
     with st.spinner(f'Extracting features for {short_option}...'):

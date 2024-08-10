@@ -1,17 +1,22 @@
 import os
 from contextlib import contextmanager
 
-def get_path(root_dir):
+def get_files_from_dir(directory):
+    file_paths = []
+    for item in os.listdir(directory):
+        item_path = os.path.join(directory, item)
+        if os.path.isdir(item_path):
+            file_paths.extend(get_files_from_dir(item_path))
+        else:
+            file_paths.append(item_path)
+    return file_paths
+
+def get_files_path(root_dir):
     files_path = []
     for class_dir in os.listdir(root_dir):
         class_path = os.path.join(root_dir, class_dir)
         if os.path.isdir(class_path):
-            for feature_dir in os.listdir(class_path):
-                feature_path = os.path.join(class_path, feature_dir)
-                if os.path.isdir(feature_path):
-                    for filename in os.listdir(feature_path):
-                        file_path = os.path.join(feature_path, filename)
-                        files_path.append(file_path)
+            files_path.extend(get_files_from_dir(class_path))
     return files_path
 
 @contextmanager
