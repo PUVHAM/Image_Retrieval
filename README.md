@@ -110,12 +110,12 @@ The project includes scripts for crawling and cleaning data from Flickr. To use 
     ```
     
     This will create and populate the `Dataset` folder with crawled and cleaned images.
-3. Organise data
+3. Organize data
      ```bash
-    python organise_folder.py
+    python organize_folder.py
     ```
 
-    The `organise_folder.py` will organize the `Dataset` folder into a `data` directory with two subfolders: `train` and `test`.
+    The `organize_folder.py` will organize the `Dataset` folder into a `data` directory with two subfolders: `train` and `test`.
 
 
 ## Model and Dataset
