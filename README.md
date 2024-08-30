@@ -3,8 +3,8 @@
 This repository contains code and instructions for an image retrieval system using basic mathematical methods and advanced techniques. The project provides a user-friendly interface through Streamlit for users to interact with the model and utilizes ChromaDB for efficient vector storage and retrieval.
 
 <p align="center">
-  <img src="https://drive.google.com/uc?export=view&id=1vehgkbYusOfYISu-HRjsbu1ZlFSgKvFa" width="448" height="280" style="margin-right: 5%;" />
-  <img src="https://drive.google.com/uc?export=view&id=1AKdxsK5ik1paGlfwmR1v416pONerJgrc" width="448" height="280" />
+  <img src="https://drive.google.com/uc?export=view&id=1vehgkbYusOfYISu-HRjsbu1ZlFSgKvFa" width="455" height="290" style="margin-right: 5%;" />
+  <img src="https://drive.google.com/uc?export=view&id=1AKdxsK5ik1paGlfwmR1v416pONerJgrc" width="455" height="290" />
 </p>
 
 ## Table of Contents
@@ -14,6 +14,8 @@ This repository contains code and instructions for an image retrieval system usi
 - [Installation](#installation)
 - [Usage](#usage)
   - [Running the Streamlit App](#running-the-streamlit-app)
+  - [Running with Docker](#running-with-docker)
+  - [Using the Streamlit App](#using-the-streamlit-app)
   - [Data Crawling](#data-crawling)
 - [Model and Dataset](#model-and-dataset)
 - [Acknowledgments](#acknowledgments)
@@ -89,7 +91,30 @@ The Streamlit app allows users to upload images and search for similar images in
     streamlit run app.py
     ```
 
-3. Use the app:
+### Running with Docker
+
+#### Prerequisites
+  - [Docker](https://www.docker.com/get-started): Make sure Docker is installed on your system.
+1. Build docker image
+     
+    ```bash
+       docker build -t image_retrieval -f docker/Dockerfile .
+    ```
+    
+2. Run a docker container
+   
+    ```bash
+       docker run -d -p 8501:8501 -it --name image_retrieval image_retrieval
+    ```
+4. Access the Streamlit App
+  - Once the Docker container is running, open your web browser and go to:
+
+    ```bash
+    http://localhost:8501
+    ```
+You should see the Image Retrieval Streamlit app interface, where you can interact with the model by uploading images, selecting similarity metrics, and viewing results.
+
+### Using the Streamlit App
    - Select the similarity metric (Cosine Similarity or L2) from the sidebar.
    - Click the "Extract" button to extract features from the dataset and store them in ChromaDB (only needs to be done once for each method).
    - Upload an image to search for similar images.
