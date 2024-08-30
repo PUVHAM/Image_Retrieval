@@ -3,8 +3,8 @@
 This repository contains code and instructions for an image retrieval system using basic mathematical methods and advanced techniques. The project provides a user-friendly interface through Streamlit for users to interact with the model and utilizes ChromaDB for efficient vector storage and retrieval.
 
 <p align="center">
-  <img src="https://drive.google.com/uc?export=view&id=1vehgkbYusOfYISu-HRjsbu1ZlFSgKvFa" width="448" height="280" style="margin-right: 5%;" />
-  <img src="https://drive.google.com/uc?export=view&id=1AKdxsK5ik1paGlfwmR1v416pONerJgrc" width="448" height="280" />
+  <img src="https://drive.google.com/uc?export=view&id=1vehgkbYusOfYISu-HRjsbu1ZlFSgKvFa" width="455" height="290" style="margin-right: 5%;" />
+  <img src="https://drive.google.com/uc?export=view&id=1AKdxsK5ik1paGlfwmR1v416pONerJgrc" width="455" height="290" />
 </p>
 
 ## Table of Contents
