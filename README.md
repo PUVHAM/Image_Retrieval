@@ -3,8 +3,8 @@
 This repository contains code and instructions for an image retrieval system using basic mathematical methods and advanced techniques. The project provides a user-friendly interface through Streamlit for users to interact with the model and utilizes ChromaDB for efficient vector storage and retrieval.
 
 <p align="center">
-  <img src="https://drive.google.com/uc?export=view&id=1vehgkbYusOfYISu-HRjsbu1ZlFSgKvFa" width="455" height="290" style="margin-right: 5%;" />
-  <img src="https://drive.google.com/uc?export=view&id=1AKdxsK5ik1paGlfwmR1v416pONerJgrc" width="455" height="290" />
+  <img src="https://drive.google.com/uc?export=view&id=1vehgkbYusOfYISu-HRjsbu1ZlFSgKvFa" width="470" height="295" style="margin-right: 5%;" />
+  <img src="https://drive.google.com/uc?export=view&id=1AKdxsK5ik1paGlfwmR1v416pONerJgrc" width="470" height="295" />
 </p>
 
 ## Table of Contents
@@ -79,13 +79,13 @@ To get started, clone the repository and install the required dependencies.
 ### Running the Streamlit App
 
 The Streamlit app allows users to upload images and search for similar images in the dataset.
-1. Navigate to the `src` directory
+1. **Navigate to the `src` directory:**
 
    ```bash
     cd src
     ```
 
-2. Start the Streamlit app:
+2. **Start the Streamlit app:**
 
     ```bash
     streamlit run app.py
@@ -95,24 +95,25 @@ The Streamlit app allows users to upload images and search for similar images in
 
 #### Prerequisites
   - [Docker](https://www.docker.com/get-started): Make sure Docker is installed on your system.
-1. Build docker image
+1. **Build docker image:**
      
     ```bash
-       docker build -t image_retrieval -f docker/Dockerfile .
+    docker build -t image_retrieval -f docker/Dockerfile .
     ```
     
-2. Run a docker container
+2. **Run a docker container:**
    
     ```bash
-       docker run -d -p 8501:8501 -it --name image_retrieval image_retrieval
+    docker run -d -p 8501:8501 -it --name image_retrieval image_retrieval
     ```
-4. Access the Streamlit App
+3. **Access the Streamlit App:**
   - Once the Docker container is running, open your web browser and go to:
 
     ```bash
     http://localhost:8501
     ```
-You should see the Image Retrieval Streamlit app interface, where you can interact with the model by uploading images, selecting similarity metrics, and viewing results.
+    
+    You should see the Image Retrieval Streamlit app interface, where you can interact with the model by uploading images, selecting similarity metrics, and viewing results.
 
 ### Using the Streamlit App
    - Select the similarity metric (Cosine Similarity or L2) from the sidebar.
@@ -125,8 +126,13 @@ You should see the Image Retrieval Streamlit app interface, where you can intera
 
 The project includes scripts for crawling and cleaning data from Flickr. To use these scripts:
 
-1. Navigate to the `src/crawl_data` directory.
-2. Run the scripts in the following order:
+1. **Navigate to the `src/crawl_data` directory:**
+
+    ```bash
+    cd src/crawl_data
+    ```
+    
+2. **Run the scripts in the following order:**
 
     ```bash
     python crawl_url.py
@@ -135,7 +141,9 @@ The project includes scripts for crawling and cleaning data from Flickr. To use 
     ```
     
     This will create and populate the `Dataset` folder with crawled and cleaned images.
-3. Organize data
+   
+3. **Organize data:**
+
      ```bash
     python organize_folder.py
     ```
